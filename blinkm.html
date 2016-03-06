@@ -1,21 +1,68 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta  content="text/html; charset=utf-8">
-		<title>BlinkM Controller</title>
-	</head>
-	<body>
-		<h1>Set the color of the BlinkM LED</h1>
-		<form action="/set-led" method="post">
-			<label>Set Red: </label>
-			<button type="submit" name="color" value="red">Red</button>
-			<br />
-			<label>Set Green: </label>
-			<button type="submit" name="color" value="green">Green</button>
-			<br />
-			<label>Set Blue: </label>
-			<button type="submit" name="color" value="blue">Blue</button>
-			<br />
-		</form>
-	</body>
+
+<head>
+    <meta content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>BlinkM Controller</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.9/css/bootstrap-material-design.css">
+    <link rel="stylesheet" type="text/css" href="ttps://cdn.jsdelivr.net/bootstrap.material-design/0.5.9/css/ripples.csss">
+</head>
+
+<body>
+    <div class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="javascript:void(0)">BlinkM</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Color options</h2>
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="well bs-component">
+                    <form action="/set-led" method="post" class="form-horizontal">
+                        <fieldset>
+                            <legend>Set color</legend>
+                            <div class="form-group">
+                                <label class="col-md-3">Set Red: </label>
+                                <button class="btn btn-raised btn-danger" type="submit" name="color" value="red">Red</button>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3">Set Green: </label>
+                                <button class="btn btn-raised btn-success" type="submit" name="color" value="green">Green</button>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3">Set Blue: </label>
+                                <button class="btn btn-raised btn-info" type="submit" name="color" value="blue">Blue</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <div class="col-md-6">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.9/js/material.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.9/js/ripples.min.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                $.material.init();
+            });
+        </script>
+    </div>
+</body>
+
 </html>
