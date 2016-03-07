@@ -1,7 +1,3 @@
--- Network Variables --
-ssid = "telenet-00DF1"
-pass = "f8JMe0vKGBwG"
-
 -- i2c Variables --
 id = 0
 sda = 1
@@ -122,9 +118,10 @@ local function connect(conn)
 			
 			if query_data["METHOD"] == "GET" then
 				print("Got GET\n")
-				webpage = read_web_page("blinkm.html")
+				webpage = read_web_page("blinkm.htmlgz")
 				--print(webpage)
-				conn:send('HTTP/1.1 200 OK\n\n')
+				conn:send("HTTP/1.1 200 OK\n")
+                conn:send("Content-Encoding: gzip\n\n")
 				conn:send(webpage)
 				conn:close()
 			elseif query_data["METHOD"] == "POST" then
@@ -158,6 +155,10 @@ i2c.setup(id, sda, scl, i2c.SLOW)
 i2c.start(id)
 i2c.address(id, 0x09, i2c.TRANSMITTER)
 i2c.write(id, 0x6f)
+i2c.write(id, 0x6e)
+i2c.write(id, 0x00)
+i2c.write(id, 0x00)
+i2c.write(id, 0x00)
 i2c.stop(id)
 
 --- Start web server ---

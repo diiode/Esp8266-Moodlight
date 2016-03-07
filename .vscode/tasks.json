@@ -18,17 +18,19 @@
 		{
 			"taskName": "Build",
 			"isBuildCommand": true,
+            "isTestCommand": false,
             "showOutput": "always",
             "suppressTaskName": true,
-            "args": ["copy ${file} init.lua"]
+            "args": ["build.bat"]
 		},
         {
             "taskName": "Flash",
             "isBuildCommand": false,
+            "isTestCommand": true,
             "showOutput": "always",
             "suppressTaskName": true,
             "args": [
-                "nodemcu-uploader.py upload init.lua --port COM1 --baud 9600"
+                "nodemcu-uploader.exe --verbose --port COM3 --baud 9600 upload init.lua blinkm.htmlgz"
             ]
         }
 	]
