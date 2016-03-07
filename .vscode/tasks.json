@@ -10,14 +10,26 @@
 	"version": "0.1.0",
 	"isShellCommand": true,
 	"showOutput": "always",
-    "command": "build.bat",
+    // Hack for defining multiple tasks
+    "command": "cmd.exe",
+    "args": ["/C"],
 
 	"tasks": [
 		{
-			"taskName": "build",
+			"taskName": "Build",
 			"isBuildCommand": true,
             "showOutput": "always",
-            "args": ["${file}"]
-		}
+            "suppressTaskName": true,
+            "args": ["copy ${file} init.lua"]
+		},
+        {
+            "taskName": "Flash",
+            "isBuildCommand": false,
+            "showOutput": "always",
+            "suppressTaskName": true,
+            "args": [
+                "nodemcu-uploader.py upload init.lua --port COM1 --baud 9600"
+            ]
+        }
 	]
 }
