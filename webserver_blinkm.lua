@@ -1,3 +1,6 @@
+-----------------------------------------
+-- I²C BlinkM Control
+-----------------------------------------
 -- i2c Variables --
 id = 0
 sda = 1
@@ -41,7 +44,8 @@ function set_led(color)
 		i2c.stop(id)
 	end
 end
-
+-----------------------------------------
+-----------------------------------------
 -- wait
 tmr.alarm(1, 1000, 1, function()
 	if wifi.sta.getip() == nil then
@@ -54,6 +58,9 @@ tmr.alarm(1, 1000, 1, function()
 	end
 end)
 
+-----------------------------------------
+-- Webserver
+-----------------------------------------
 -- serve webpage --
 local function read_web_page(filename)
 	file.open(filename, "r")
@@ -143,7 +150,9 @@ local function connect(conn)
 		end)
 end
 
--- Init --
+-----------------------------------------
+-- Init
+-----------------------------------------
 --- Setup Wifi ---
 print("Setting up WiFi")
 wifi.setphymode(wifi.PHYMODE_N)
