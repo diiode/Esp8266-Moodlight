@@ -26,5 +26,5 @@ The webpage is styled with Bootstrap and uses the Materialize theme.
          - Uploading code
  - Bootstrap: [Docs](http://getbootstrap.com/)
      - Material design theme: [github](http://fezvrasta.github.io/bootstrap-material-design/)
-- BlinkM: [Home page](http://thingm.com/products/blinkm/)
+ - BlinkM: [Home page](http://thingm.com/products/blinkm/)
      - [Datasheet](http://thingm.com/fileadmin/thingm/downloads/BlinkM_datasheet.pdf)
