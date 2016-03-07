@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <meta content="text/html; charset=utf-8">
+    <meta content="text/html" charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>BlinkM Controller</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -10,7 +10,11 @@
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.9/css/bootstrap-material-design.css">
     <link rel="stylesheet" type="text/css" href="ttps://cdn.jsdelivr.net/bootstrap.material-design/0.5.9/css/ripples.csss">
+    <style>
+        .form-group label { line-height: 60px; }
+    </style>
 </head>
+
 
 <body>
     <div class="navbar navbar-default">
@@ -36,15 +40,21 @@
                             <legend>Set color</legend>
                             <div class="form-group">
                                 <label class="col-md-3">Set Red: </label>
-                                <button class="btn btn-raised btn-danger" type="submit" name="color" value="red">Red</button>
+                                <div class="col-md-3">
+                                    <button class="btn btn-raised btn-danger" type="submit" name="color" value="red">Red</button>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-3">Set Green: </label>
-                                <button class="btn btn-raised btn-success" type="submit" name="color" value="green">Green</button>
+                                <div class="col-md-3">
+                                    <button class="btn btn-raised btn-success" type="submit" name="color" value="green">Green</button>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-3">Set Blue: </label>
-                                <button class="btn btn-raised btn-info" type="submit" name="color" value="blue">Blue</button>
+                                <div class="col-md-3">  
+                                    <button class="btn btn-raised btn-info" type="submit" name="color" value="blue">Blue</button>
+                                </div>
                             </div>
                         </fieldset>
                     </form>
